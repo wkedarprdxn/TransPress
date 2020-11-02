@@ -1,154 +1,543 @@
 @charset "utf-8";
+
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
+
 
 /* 1.1. Eric Meyers Reset
    http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
    ========================================================================== */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
-ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
-dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
-figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
 
+
 /* Force scrollbar */
-html { overflow-y: scroll; }
+
+html {
+    overflow-y: scroll;
+}
+
 
 /* Align radios and text inputs with their label */
 
-input[type='radio'] { vertical-align: text-bottom; }
+input[type='radio'] {
+    vertical-align: text-bottom;
+}
+
 
 /* Hand cursor on clickable input elements */
+
 label,
 input[type='button'],
 input[type='submit'],
 button {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 strong {
-  font-weight: bold;
-  font-family: inherit;
-  font-size: inherit;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: inherit;
 }
 
-em { font-style: italic; }
+em {
+    font-style: italic;
+}
 
 img {
-  width: 100%;
-  border: 0;
-  vertical-align: middle;
+    width: 100%;
+    border: 0;
+    vertical-align: middle;
 }
 
 sub,
 sup {
-  vertical-align: baseline;
-  position: relative;
-  font-size: 55%;
-  line-height: 0;
+    vertical-align: baseline;
+    position: relative;
+    font-size: 55%;
+    line-height: 0;
 }
 
-sup { top: -.7em; }
-sub { bottom: -.25em; }
+sup {
+    top: -.7em;
+}
+
+sub {
+    bottom: -.25em;
+}
+
 
 /* 1.2. Clear Fix
    ========================== */
 
 .cf:before,
 .cf:after {
-  display: table;
-  content: " ";
+    display: table;
+    content: " ";
 }
 
-.cf:after { clear: both; }
-.cf { *zoom: 1; }
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
 
 /*for all*/
+
 body {
-  box-sizing: border-box;
-  font-family: sans-serif;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-a { 
-  display: inline-block;
-  text-decoration: none; 
+a {
+    display: inline-block;
+    text-decoration: none;
 }
 
 li {
-  display: inline-block;
-  list-style-type: none;
+    display: inline-block;
+    list-style-type: none;
 }
 
+
 /*for wrapper*/
+
 .wrapper {
-  max-width: 1360px;
-  width: 86%; 
-  margin: 0 auto;
+    max-width: 1360px;
+    width: 86%;
+    margin: 0 auto;
 }
+
+
+/* ===== container ===== */
+
+.container {
+    max-width: 85%;
+    width: 1500px;
+    margin: 0 auto;
+}
+
+:root {
+    --main_color: #25c4a5;
+}
+
+
 /*=================================
   Header styling starts here
 =================================*/
 
+.icon::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
 
+.head-1 {
+    display: flex;
+    justify-content: space-between;
+}
 
+.head-1 figure {
+    position: relative;
+    margin: auto 0;
+}
 
+.head-1 figure h1 {
+    position: absolute;
+    visibility: hidden;
+}
+
+.head-1 .row2 {
+    display: flex;
+}
+
+.head-1 .row2 .icon {
+    margin: 10px 18px;
+    padding: 1.5em;
+    position: relative;
+}
+
+.head-1 .row2 div:last-child {
+    margin: auto;
+    display: table;
+}
+
+.head-1 .row2 h4 {
+    font-size: medium;
+    font-weight: bold;
+}
+
+.head-1 .row2 p {
+    font-size: small;
+    color: gray;
+}
+
+.head-1 .row2 button {
+    outline: none;
+    border: none;
+    padding: 10px;
+    background-color: var(--main_color);
+    color: white;
+    text-transform: uppercase;
+    text-shadow: rgb(122, 87, 87) 1px 1px;
+    border-radius: 10px;
+    border: solid 1px var(--main_color);
+}
+
+.head-1 .row2 button:hover {
+    background-color: whitesmoke;
+    color: black;
+    text-shadow: none;
+    border: solid red 1px;
+}
+
+.call::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f879";
+    position: absolute;
+    font-size: x-large;
+    color: var(--main_color);
+    left: -10px;
+}
+
+.home::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f015";
+    position: absolute;
+    font-size: x-large;
+    color: var(--main_color);
+    left: -10px;
+}
+
+.clock::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: x-large;
+    color: var(--main_color);
+    content: "\f017";
+    position: absolute;
+    left: -10px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px 0px;
+    background-color: #36302f;
+    color: white;
+}
+
+nav ul li {
+    padding: 5px;
+    position: relative;
+    color: white;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px 10px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: black;
+}
+
+.a-down::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: large;
+    position: absolute;
+    content: "\f0d7";
+    top: 14px;
+    right: 9px;
+}
+
+.shop-cart::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: x-large;
+    /* position: absolute; */
+    content: "\f290";
+    /* top: 14px; */
+    /* right: 9px; */
+}
+
+.search::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: x-large;
+    /* position: absolute; */
+    content: "\f002";
+    /* top: 14px; */
+    /* right: 9px; */
+}
+
+nav div {
+    display: table;
+    margin: auto 0;
+}
+
+.bg-img {
+    background-image: url("/assets/img/slider.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    background-position: center;
+    position: relative;
+    height: 570px;
+}
+
+.head-2 {
+    text-align: center;
+}
+
+.head-2 .sec-1 {
+    position: relative;
+}
+
+.head-2 .sec-1 h2 {
+    position: absolute;
+    font-size: 82px;
+    color: white;
+    top: 110px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.head-2 .sec-1 p:nth-child(2) {
+    color: white;
+    position: absolute;
+    font-size: small;
+    top: 210px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.head-2 .sec-1 p:nth-child(3) {
+    color: white;
+    position: absolute;
+    font-size: small;
+    top: 250px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.head-2 .sec-1 div {
+    color: white;
+    position: absolute;
+    font-size: small;
+    top: 270px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.head-2 .sec-1 div button {
+    outline: none;
+    border: none;
+    padding: 10px;
+    background-color: var(--main_color);
+    color: white;
+    text-transform: uppercase;
+    text-shadow: rgb(122, 87, 87) 1px 1px;
+    border-radius: 10px;
+    border: solid 1px var(--main_color);
+}
+
+.head-2 .sec-1 div button:hover {
+    background-color: whitesmoke;
+    color: black;
+    text-shadow: none;
+    border: solid red 1px;
+}
+
+.head-2 .sec-2 {
+    display: flex;
+    position: absolute;
+    top: 360px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.head-2 .sec-2 .item {
+    background-color: white;
+    flex: 100%;
+    padding: 25px;
+    margin: -20px 15px;
+}
+
+.head-2 .sec-2 .item .icon {
+    padding: 10px;
+}
+
+.truck::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: x-large;
+    content: "\f0d1";
+}
+
+.ship::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: x-large;
+    content: "\f21a";
+}
+
+.aeroplane::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: x-large;
+    content: "\f072";
+}
 
 
 /*=================================
   Header styling ends here
-=================================*/  
+=================================*/
+
 
 /*=================================
   main styling starts here
 =================================*/
 
 
-
-
-
-
-
-
 /*=================================
   main styling ends here
 =================================*/
 
+
 /*=================================
   footer styling starts here
-=================================*/ 
+=================================*/
 
 
-
-
-
-
-
- /*=================================
+/*=================================
   footer styling ends here
-=================================*/ 
+=================================*/
+
 
 /*media query starts*/
+
+
 /*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {
 
-
-
-}  
+@media only screen and (max-width: 995px) {}
